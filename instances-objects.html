@@ -10,7 +10,7 @@
 
     <script>
 
-       /*  function Human(firstName,lastName)
+         function Human(firstName,lastName)
         {
             this.firstName = firstName;
             this.lastName = lastName;
@@ -20,26 +20,32 @@
                console.log(`${obj.firstName} ${obj.lastName}`)
            }
         }
- */
-   class Human{
+ 
+   class Human2{
        constructor(firstName,lastName)
        {
            this.firstName = firstName;
            this.lastName = lastName;
        }
-      
-           
-       
 
-       
+       sayName(){
+           return `${this.firstName} ${this.lastName}` 
+       }
+     
+   }
+
+   Human.prototype.sayName = function()
+   {
+       return `${this.firstName} ${this.lastName}`
    }
 
 
         const adrian = new Human("Adrian","Hernandez");
         const aneiry = new Human("Aneiry","Santos");
-        const joel =  new Human("Joel","Hernandez");
+        const joel =  new Human2("Joel","Hernandez");
 
-        adrian.sayName(adrian);
+        console.log(adrian.sayName());
+        console.log(joel.sayName());
 
         
     </script>

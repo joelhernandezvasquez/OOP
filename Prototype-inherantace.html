@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Book(title, author, year) {
+            this.title = title;
+            this.author = author;
+            this.year = year;
+        }
+
+        //get Summary prototype
+        Book.prototype.getSummary = function () {
+            return `${this.title} was written by ${this.author}
+                     in ${this.year}`
+        }
+
+        function Magazine(title,author,year,month)
+        {
+            // like super 
+            Book.call(this,title,author,year);
+            this.month = month;
+        }
+
+       // Inheratance prototype
+        Magazine.prototype = Object.create(Book.prototype);
+
+        const mag1 = new Magazine("mag one","john doe","2018","Jan");
+        console.log(mag1);
+        console.log(mag1.getSummary());
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
